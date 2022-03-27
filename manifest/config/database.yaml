@@ -1,0 +1,15 @@
+database:
+  default:
+    host: "81.68.215.74"
+    port: 3306
+    user: "root"
+    pass: "123456"
+    type: "mysql"
+    name: "mlik"
+  milk:
+    host: "81.68.215.74"
+    port: 3306
+    user: "root"
+    pass: "123456"
+    type: "mysql"
+    name: "mlik"
