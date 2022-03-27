@@ -26,8 +26,8 @@ gfcli:
   gen:
     dao:
     - link:     "mysql:root:123456@tcp(81.68.215.74:3306)/mlik"
-      prefix: "t_"
-      tables:   "users,tags,user_tag_relations"
+      removePrefix: "t_"
+      tables:   ""
       jsonCase: "CamelLower"
 logger:
   path:                  "/var/log/"   # 日志文件路径。默认为空，表示关闭，仅输出到终端

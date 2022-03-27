@@ -8,19 +8,19 @@ import (
 	"mlik/internal/service/internal/dao/internal"
 )
 
-// internalSubscriptionsDao is internal type for wrapping internal DAO implements.
-type internalSubscriptionsDao = *internal.SubscriptionsDao
+// internalTagsDao is internal type for wrapping internal DAO implements.
+type internalTagsDao = *internal.TagsDao
 
-// subscriptionsDao is the data access object for table subscriptions.
+// tagsDao is the data access object for table t_tags.
 // You can define custom methods on it to extend its functionality as you wish.
-type subscriptionsDao struct {
-	internalSubscriptionsDao
+type tagsDao struct {
+	internalTagsDao
 }
 
 var (
-	// Subscriptions is globally public accessible object for table subscriptions operations.
-	Subscriptions = subscriptionsDao{
-		internal.NewSubscriptionsDao(),
+	// Tags is globally public accessible object for table t_tags operations.
+	Tags = tagsDao{
+		internal.NewTagsDao(),
 	}
 )
 

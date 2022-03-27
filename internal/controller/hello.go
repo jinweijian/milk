@@ -7,7 +7,6 @@ import (
 	"github.com/gogf/gf/v2/os/gcache"
 	"github.com/gogf/gf/v2/os/glog"
 	"mlik/api/v1"
-	"mlik/internal/service"
 )
 
 var (
@@ -29,20 +28,15 @@ func (c *cHello) Hello(ctx context.Context, req *v1.HelloReq) (res *v1.HelloRes,
 	if gCacheGetErr != nil {
 		fmt.Println("cache get error :", gCacheGetErr.Error())
 	}
-	sup, supErr := service.NewSubscription().Get(ctx, 2)
-	if supErr != nil {
-		fmt.Println("get supErr data error :", supErr.Error())
-	}
-	fmt.Println("supsupsupsupsupsup :", sup.Json())
-	databaseConfig := g.DB("master").GetConfig().String()
+	databaseConfig := g.DB().GetConfig().String()
 	fmt.Println("databaseConfig :", databaseConfig)
-	allRes, allErr := g.DB("master").Model("charges").Sum("id")
+	allRes, allErr := g.DB().Model("users").Sum("id")
 	if allErr != nil {
 		fmt.Println("get model data error :", allErr.Error())
 	}
 	//fmt.Println("get value: ", allRes.Json())
 	fmt.Println("get value: ", cacheValue.String())
-	fmt.Println(g.Cfg().Get(ctx, "master"))
+	fmt.Println(g.Cfg().Get(ctx, "database.default"))
 	glog.Debug(ctx, "这个是一个log")
 	fmt.Println("path : ", glog.GetPath())
 	fmt.Println("config", glog.GetLevel())
