@@ -2,11 +2,6 @@ server:
   address:     ":8000"
   openapiPath: "/api.json"
   swaggerPath: "/swagger"
-  logger:
-    path:    "/var/log/gf-app/sql"
-    file:    "{Y-m-d-h-m}.log" # 日志文件格式。默认为"{Y-m-d}.log"
-    level:   "all"
-    stdout:  true
 database:
   default:
     host: "81.68.215.74"

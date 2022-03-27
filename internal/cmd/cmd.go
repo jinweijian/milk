@@ -21,6 +21,11 @@ var (
 				group.Bind(
 					controller.Hello,
 				)
+				group.Group("/tags", func(group *ghttp.RouterGroup) {
+					group.Bind(
+						controller.CreateTag,
+					)
+				})
 			})
 			s.Run()
 			return nil
