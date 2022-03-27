@@ -34,7 +34,7 @@ var (
 func (c cCreate) Create(ctx context.Context, req *v1.TagCreateReq) (res v1.TagCreateRes, err error) {
 
 	tag, createErr := service.Tag.Create(ctx, model.TagCreateInput{
-		Id:      1,
+		Id:      2,
 		TagName: req.Name,
 	})
 	if createErr != nil {
